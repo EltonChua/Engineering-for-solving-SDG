@@ -38,3 +38,36 @@
                 });
             }
         });
+
+// script.js - Add dynamic features
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click handlers to all article cards
+    const articleCards = document.querySelectorAll('.article-card');
+    
+    articleCards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Navigate to article page or show modal
+            const title = this.querySelector('h3').textContent;
+            console.log('Opening article:', title);
+            // window.location.href = `/article/${encodeURIComponent(title)}`;
+        });
+    });
+
+    // Add loading animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    // Observe article cards for scroll animations
+    articleCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+});
