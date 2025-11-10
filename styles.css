@@ -1,84 +1,33 @@
-header {
-    background-color: #f8f9fa;
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: white;
 }
 
-main {
-    margin-left: 250px;
-    padding: 20px;
-    margin-top: 140px;
-}
-.sidebar {
-    width: 250px;
-    background: #114b5f;
-    color: white;
-    position: fixed;
-    top: 140px; /* Below header */
-    left: 0;
-    height: calc(100vh - 140px);
-    overflow-y: auto;
-    transition: all 0.3s ease;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
-.sidebar-menu {
-    list-style: none;
-    padding: 1rem 0;
+.nav-menu a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-.sidebar-menu li {
-    margin: 0;
+.nav-menu a:hover {
+  color: #4CAF50;
 }
 
-.sidebar-menu a {
-    display: block;
-    padding: 1rem 1.5rem;
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border-left: 4px solid transparent;
-}
-
-.sidebar-menu a:hover, .sidebar-menu a.active {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-left-color: #ffffff;
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-    
-    .sidebar {
-        transform: translateX(-100%);
-        width: 80%;
-        max-width: 300px;
-        z-index: 999;
-    }
-    
-    .sidebar.active {
-        transform: translateX(0);
-    }
-    
-    main, footer {
-        margin-left: 0;
-        width: 100%;
-        max-width: 100%;
-    }
-    
-    .sdg-cards {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-    
-    .stats-container {
-        grid-template-columns: 1fr;
-    }
+.nav-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
