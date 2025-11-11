@@ -22,7 +22,7 @@ body {
 }
 
 .navbar {
-    display: flex;
+    display: inline-block;
     justify-content: space-between;
     align-items: center;
     max-width: 1200px;
@@ -38,24 +38,39 @@ body {
     transform: scale(1.05);
 }
 
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+.spacer {
+    /* Allow the spacer to grow inside a flex container */
+    flex: 1 1 auto;
+    display: block;
+    min-width: 0;
 }
 
-.nav-menu a {
+.menu {
+    /* Use a horizontal flex layout for the nav menu by default */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    list-style: none;
+    padding-left: 0;
+}
+
+
+.menu a {
     color: #fff;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, background 0.3s ease, transform 0.15s ease;
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
 }
 
-.nav-menu a:hover {
+.menu a:hover {
     color: #00b4d8;
     background: rgba(255,255,255,0.1);
+    transform: translateY(-1px);
 }
 
 /* Main Content */
