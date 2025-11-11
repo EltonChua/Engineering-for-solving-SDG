@@ -38,39 +38,56 @@ body {
     transform: scale(1.05);
 }
 
-.spacer {
-    /* Allow the spacer to grow inside a flex container */
-    flex: 1 1 auto;
-    display: block;
-    min-width: 0;
-}
-
 .menu {
-    /* Use a horizontal flex layout for the nav menu by default */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-    list-style: none;
-    padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+.menu li {
+  display: flex;
+  align-items: center;
+}
 
 .menu a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease, background 0.3s ease, transform 0.15s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    display: inline-flex;
-    align-items: center;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  padding-left: 32;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .menu a:hover {
-    color: #00b4d8;
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-1px);
+  color: #00b4d8;
+  background: rgba(0, 180, 216, 0.1);
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #00b4d8;
+  transition: width 0.3s ease;
+}
+
+.menu a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }
 
 /* Main Content */
